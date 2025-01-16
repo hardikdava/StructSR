@@ -1,7 +1,10 @@
+## (AAAI2025) StructSR: Refuse Spurious Details in Real-World Image Super-Resolution
 
-## StructSR: Refuse Spurious Details in Real-World Image Super-Resolution
+[Project Page]: https://lycexe.github.io/StructSR-project/
+[Arxiv Page]: https://arxiv.org/abs/2501.05777
 
 ### Dependencies and Installation
+
 - Pytorch == 1.12.1
 - CUDA == 11.7
 - pytorch-lightning==1.4.2
@@ -44,3 +47,15 @@ This project is based on [stablediffusion](https://github.com/Stability-AI/stabl
 ### Contact
 
 If you have any questions, please feel free to reach me out at `li509383050@gmail.com`.
+
+### BibTeX
+
+```
+@article{li2025structsr,
+  title={StructSR: Refuse Spurious Details in Real-World Image Super-Resolution},
+  author={Li, Yachao and Liang, Dong and Ding, Tianyu and Huang, Sheng-Jun},
+  journal={arXiv preprint arXiv:2501.05777},
+  year={2025}
+}
+```
+
