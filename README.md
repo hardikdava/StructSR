@@ -1,7 +1,7 @@
 ## (AAAI2025) StructSR: Refuse Spurious Details in Real-World Image Super-Resolution
 
-[Project Page]: https://lycexe.github.io/StructSR-project/
-[Arxiv Page]: https://arxiv.org/abs/2501.05777
+[Project Page]: https://lycexe.github.io/StructSR-project/	"Project Page"
+[Arxiv Page]: https://arxiv.org/abs/2501.05777	"Arxiv Page"
 
 ### Dependencies and Installation
 
