@@ -1,7 +1,6 @@
 ## (AAAI2025) StructSR: Refuse Spurious Details in Real-World Image Super-Resolution
 
-[Project Page]: https://lycexe.github.io/StructSR-project/	"Project Page"
-[Arxiv Page]: https://arxiv.org/abs/2501.05777	"Arxiv Page"
+[Paper](https://arxiv.org/abs/2501.05777) | [Project Page](https://lycexe.github.io/StructSR-project/)
 
 ### Dependencies and Installation
 
@@ -36,19 +35,9 @@ python scripts/StructSR.py --config configs/stableSRNew/v2-finetune_text_T_512.y
 lamda: Used for control the timesteps of $T_{SAS}$
 ```
 
-### License
+## Citation
 
-This project is licensed under [MIT License](https://github.com/LYCEXE/StructSR/blob/main/LICENSE). Redistribution and use should follow this license.
-
-### Acknowledgement
-
-This project is based on [stablediffusion](https://github.com/Stability-AI/stablediffusion), [latent-diffusion](https://github.com/CompVis/latent-diffusion), [SPADE](https://github.com/NVlabs/SPADE), [mixture-of-diffusers](https://github.com/albarji/mixture-of-diffusers), [BasicSR](https://github.com/XPixelGroup/BasicSR) and [StructSR](https://github.com/IceClear/StableSR). Thanks for their awesome work.
-
-### Contact
-
-If you have any questions, please feel free to reach me out at `li509383050@gmail.com`.
-
-### BibTeX
+Please cite us if our work is useful for your research.
 
 ```
 @article{li2025structsr,
@@ -58,4 +47,24 @@ If you have any questions, please feel free to reach me out at `li509383050@gmai
   year={2025}
 }
 ```
+
+
+
+### License
+
+------
+
+This project is licensed under [MIT License](https://github.com/LYCEXE/StructSR/blob/main/LICENSE). Redistribution and use should follow this license.
+
+### Acknowledgement
+
+------
+
+This project is based on [stablediffusion](https://github.com/Stability-AI/stablediffusion), [latent-diffusion](https://github.com/CompVis/latent-diffusion), [SPADE](https://github.com/NVlabs/SPADE), [mixture-of-diffusers](https://github.com/albarji/mixture-of-diffusers), [BasicSR](https://github.com/XPixelGroup/BasicSR) and [StructSR](https://github.com/IceClear/StableSR). Thanks for their awesome work.
+
+### Contact
+
+------
+
+If you have any questions, please feel free to reach me out at `li509383050@gmail.com`.
 
