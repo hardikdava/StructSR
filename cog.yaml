@@ -26,6 +26,7 @@ build:
     - "kornia==0.6.12"
     - "xformers==0.0.20"
     - "clip @ git+https://github.com/openai/CLIP.git"
+    - "gdown"
   run:
     - pip install git+https://github.com/CompVis/taming-transformers.git@master#egg=taming-transformers
     - mkdir -p /root/.cache/torch/hub/checkpoints && wget --output-document "/root/.cache/torch/hub/checkpoints/vgg16-397923af.pth" "https://download.pytorch.org/models/vgg16-397923af.pth"

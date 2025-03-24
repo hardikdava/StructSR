@@ -28,20 +28,20 @@ from cog import BasePredictor, Input, Path
 VQGAN_PATH = "vqgan_cfw_00011.ckpt"
 STABLESR_PATH = "stablesr_000117.ckpt"
 
-def download_file(url, output):
-    gdown.download(url, output, quiet=False)
+def download_file(id, output):
+    gdown.download(id=id, output=output, quiet=False)
 
 
 class Predictor(BasePredictor):
     def setup(self) -> None:
 
         if not os.path.exists(VQGAN_PATH):
-            vqgan_url = "https://drive.google.com/file/d/1I5o7eIglQUxtOoKqVCqfpEdymXivxoJ-/view?usp=drive_link"
-            download_file(vqgan_url, VQGAN_PATH)
+            vqgan_id = "1URIFNMA_bfv5-lARdANO5zSiGhKIvjK5"
+            download_file(vqgan_id, VQGAN_PATH)
 
         if not os.path.exists(STABLESR_PATH):
-            stablesr_url = "https://drive.google.com/file/d/1XIr_NdwlfbCySjOz4UDp4IJnAclJEYaB/view?usp=drive_link"
-            download_file(stablesr_url, STABLESR_PATH)
+            stablesr_id = "14TS_EtOmiduy6IDslTspOBPoFElxlXmP"
+            download_file(stablesr_id, STABLESR_PATH)
 
         """Load the model into memory to make running multiple predictions efficient"""
         config = OmegaConf.load("configs/stableSRNew/v2-finetune_text_T_512.yaml")
