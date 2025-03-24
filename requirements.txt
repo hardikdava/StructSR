@@ -19,6 +19,7 @@ triton
 matplotlib
 wandb
 pillow
+gdown
 -e ./taming-transformers
 -e ./CLIP
 -e .

@@ -14,7 +14,9 @@ from einops import rearrange, repeat
 from torch import autocast
 from pytorch_lightning import seed_everything
 import torch.nn.functional as F
+import gdown
 
+from app import vq_model
 from ldm.util import instantiate_from_config
 from scripts.wavelet_color_fix import (
     wavelet_reconstruction,
@@ -23,12 +25,27 @@ from scripts.wavelet_color_fix import (
 
 from cog import BasePredictor, Input, Path
 
+VQGAN_PATH = "vqgan_cfw_00011.ckpt"
+STABLESR_PATH = "stablesr_000117.ckpt"
+
+def download_file(url, output):
+    gdown.download(url, output, quiet=False)
+
 
 class Predictor(BasePredictor):
     def setup(self) -> None:
+
+        if not os.path.exists(VQGAN_PATH):
+            vqgan_url = "https://drive.google.com/file/d/1I5o7eIglQUxtOoKqVCqfpEdymXivxoJ-/view?usp=drive_link"
+            download_file(vqgan_url, VQGAN_PATH)
+
+        if not os.path.exists(STABLESR_PATH):
+            stablesr_url = "https://drive.google.com/file/d/1XIr_NdwlfbCySjOz4UDp4IJnAclJEYaB/view?usp=drive_link"
+            download_file(stablesr_url, STABLESR_PATH)
+
         """Load the model into memory to make running multiple predictions efficient"""
         config = OmegaConf.load("configs/stableSRNew/v2-finetune_text_T_512.yaml")
-        self.model = load_model_from_config(config, "stablesr_000117.ckpt")
+        self.model = load_model_from_config(config, STABLESR_PATH)
         device = torch.device("cuda")
 
         self.model.configs = config
@@ -37,7 +54,7 @@ class Predictor(BasePredictor):
         vqgan_config = OmegaConf.load(
             "configs/autoencoder/autoencoder_kl_64x64x4_resi.yaml"
         )
-        self.vq_model = load_model_from_config(vqgan_config, "vqgan_cfw_00011.ckpt")
+        self.vq_model = load_model_from_config(vqgan_config, VQGAN_PATH)
         self.vq_model = self.vq_model.to(device)
 
     def predict(
